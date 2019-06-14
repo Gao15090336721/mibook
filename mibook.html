@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小米笔记本</title>
+		<style>
+			*{margin: 0px;padding:0px}
+			a{text-decoration: none}
+			ul{list-style: none;}
+			hr{background-color: #D3D3D3;height: 1px;border:0 ;}
+			.hr{margin: auto;width: 100%;}
+			.clearflo:after{content: ".";visibility: hidden;clear:both;display: block;height: 0;}
+			.mibook-body{width:100%;background-color: white;}
+			.mibook-header{width: 100%;margin: auto;}
+			.mibook-header-up{width: 100%;height: 40px;background-color: #333333;}
+			.mibook-header-up-content{width: 80%;height: 40px;}
+			.mibook-header-up-left{float: left;height: 40px;}
+			.mibook-header-up-right-span a{color:#A4A4B0 ; text-decoration: none}
+			.mibook-header-up-left ul{list-style: none;float: left;}
+			.mibook-header-up-left ul li{padding-right: 15px;line-height: 40px; display: inline-block;font-size:12px;color:#A4A4B0;}
+			.mibook-header-up-left a{color:#A4A4B0 ; text-decoration: none}
+			.mibook-header-up-left a:hover{color: white;}
+			.mibook-header-up-right{float: right;height: 45px;}
+			.mibook-header-up-right-span{margin-right:25px;float: right;color:#A4A4B0 ;font-size: 12px;line-height: 40px;}
+			.mibook-header-up-right img{float: right;}
+			.mibook-header-up-right-span a{color:#A4A4B0 ; text-decoration: none}
+		    .mibook-header-up-right-span a:hover{color: white;}
+
+			.mibook-header-nav{width: 100%;height: 90px;background-color: white;}
+			.mibook-header-nav-content{margin: auto;width: 80%;}
+			.mibook-header-nav-left {float: left;width: 70%;}
+			.mibook-header-nav-left img{width: 55px;height:55px;float: left;margin-top: 17px;margin-right: 60px;}
+			.mibook-header-nav-left ul li{line-height:90px;display: inline-block;float: left;padding-right: 20px;}
+			.mibook-header-nav-left a{font-size: 16px;color: black;}
+			.mibook-header-nav-left a:hover{color: #FF6700;}
+			.mibook-header-nav-right{float: right;width: 30%;margin-top: 15px;}
+			.mibook-header-nav-right input{float: right;width: 250px;height: 48px;border: 1px solid #e0e0e0;}
+			.mibook-header-nav-right img{float: right;margin-top: -1px;}
+			
+			.mibook-header-down{position:relative;box-shadow: 0px 5px 5px rgba(0,0,0,0.07);z-index: 4px;margin:auto;width: 100%;height: 65px;background-color: white;}
+		    .mibook-header-down-content{margin:auto;width: 80%;height: 65px;background-color:white;}
+		    .mibook-header-down-left{float: left;height: 65px;width: 55%;}
+		    .mibook-header-down-left h2{margin: 0;font-size: 18px;font-weight: 400;line-height: 65px;color: #212121;float: left;}
+		    .mibook-header-down-left a{font-size: 12px;color: #616161;}
+		    .mibook-header-down-left span{font-size: 12px;color: #616161;line-height: 65px;}
+		    .mibook-header-down-left a:hover{color: #FF6700;}
+		    .mibook-header-down-right{float: right;height: 65px;width: 45%;}
+		    .mibook-header-down-right-span{float: right;height: 65px;width:210px}
+		    .mibook-header-down-right a{font-size: 14px;color: #616161;}
+		    .mibook-header-down-right a:hover{color: #FF6700;}
+		    .mibook-header-down-right span{line-height: 65px;}
+		    .mibook-header-down-right input{margin-top:20px;color:white;font-size: 12px;background-color: #FF6700;border: 0;float: right;width:120px;height: 30px;}
+		
+		    .mibook-section1{width: 100%;height:430px ;background-color: white;}
+		    .mibook-section-content{width: 80%;margin: auto;}
+		    .mibook-section1-content-right{float: right;margin-top: 130px;margin-right: 90px;}
+		    .specs_intro{margin-top: 45px;}
+		    .mibook-section1-content p{margin: 0;line-height: 40px;font-size: 16px;color: #333;}
+		    .mibook-section2{width: 100%;height:460px ;background-color: white;}
+		    .mibook-section-content-span1{width: 172px;float: left;}
+		    .mibook-section-content-span1 h2{margin: 0;font-weight: normal;}
+		    .span-p{margin: 0;line-height: 40px;font-size: 16px;color: #333;}
+		    .mibook-section-content-span2{width: 350px;float: left;}
+		    .mibook-section-content-span3{width: 310px;float: left;}
+		    .mibook-section-content-span4{width: 80%;float: left;}
+		    .mibook-section-content-row{margin: auto;width: 100%;}
+		    .tianchong{margin: auto;width: 80%;height: 50px;}
+		    .mibook-section3{width: 100%;height:260px ;background-color: white;}
+		    .mibook-section4{background-color: white;width: 100%;height:180px ;}
+		    .mibook-section5{background-color: white;width: 100%;height:580px ;}
+		    .mibook-section6{background-color: white;width: 100%;height:220px ;}
+		    .mibook-section7{background-color: white;width: 100%;height:140px ;}
+		    .mibook-section8{background-color: white;width: 100%;height:180px ;}
+		    .mibook-section9{background-color: white;width: 100%;height:530px ;}
+		    .specs-screen{width:386px;height: 234px;float: left;margin-bottom: 60px;}
+		    .mibook-section9-right{width: 86%;height: 430px;float: right;background-color: white;}
+		    .mibook-section10{background-color: white;width: 100%;height:140px ;}
+		    .mibook-section11{background-color: white;width: 100%;height:220px ;}
+		    .mibook-section12{background-color: white;width: 100%;height:220px ;}
+		    .mibook-section13{background-color: white;width: 100%;height:180px ;}
+		    .mibook-section14{background-color: white;width: 100%;height:426px ;}
+		    .specs_body{width:484px;height: 205px;float: left;margin-bottom: 45px;}
+		    .mibook-section14-right{width: 86%;height: 330px;float: right;}
+		    .mibook-section15{background-color: white;width: 100%;height:220px ;}
+		    .mibook-section16{background-color: white;width: 100%;height:220px ;}
+		    .mibook-section17{background-color: white;width: 100%;height:140px ;}
+		    .mibook-section18{background-color: white;width: 100%;height:140px ;}
+		    .mibook-section-wei{background-color: #FAFAFA;width: 100%;height:210px ;}
+		    .mibook-section-wei-txt{background-color: #FAFAFA;width: 75%;margin:auto;}
+		    .mibook-section-wei-txt-span-p{padding: 0;font-size: 12px;list-style-type: none;line-height: 1.5;color: #CCD0D9;}
+            .tianchong2{width: 80%;height: 60px;}
+		
+			.foot-up{height: 225px;background-color:white;border: 1px solid white;}
+			.foot-up-ul{float: left;list-style: none;}
+			.foot-up-ul li{color: #616161;font-size: 14px;display: inline-block;padding-right: 50px;text-align: center;line-height: 35px;margin-bottom: 5px;}
+			.foot-up-ul-box{width: 100%;margin-top: 10px;}
+			.foot-up-ul-box img{float: left;margin-top: 5px;}
+			.foot-up-ul-txt{float:left;margin-left: 5px;}
+			.foot-up-content{width: 80%;margin: auto;}
+			.foot-up-content-up{width: 100%;margin: auto;background-color: white;}
+			.foot-up-content-down{width: 100%;margin: auto;background-color:white;}
+			.foot-up-ul2{list-style: none;float: left;margin-top: 33px;margin-bottom: 5px;}
+			.foot-up-ul2-b{font-size:16px;font-weight: 600;margin-bottom: 10px;}
+			.foot-up-ul2 li{color: #616161;font-size:14px;padding-right: 90px;padding-bottom: 10px;}
+		    .foot-up-right{float: right;width: 280px;height: 100px;margin-top: 25px;}
+		    .right-number{color: #616161;font-weight: 700;color: #FF8C00;font-size: 20px;}
+		    .right-time{color: #616161;font-size: 13px;margin: 0;padding: 0;}
+		    .foot-down{width: 100%;height: 240px;}
+		    .foot-down-link{font-size: 13px;}
+		    .foot-down-bei{font-size: 13px;color: #616161;}
+		    .foot-down-box{margin: auto;width:90%;}
+		    .foot-down-img{width: 55px;height: 55px;margin-top: 55px;float: left;}
+		    .foot-down-span{float: left;margin-top: 80px;margin-left: 20px;}
+		    .foot-down-img-wei{float: right;margin-top: 100px;}
+		    .fashao-div{margin: auto;width: 300px;height: 50px;}
+		    .fashao{margin-top: 20px;}
+		</style>
+	</head>
+	<body>
+		<div class="mibook-body">
+			<header>
+				<div class="mibook-header" >
+				<div class="mibook-header-up" align="center">
+				<div class="mibook-header-up-content">
+					<div class="mibook-header-up-left">
+						<ul>
+							<li><a href="#">小米商城</a></li><li><a href="#">MIUI</a></li><li><a href="#">loT</a></li><li><a href="#">云服务</a></li><li><a href="#">金融</a></li><li><a href="#">有品</a></li><li><a href="#">小爱开放平台</a></li><li><a href="#">政企服务</a></li><li><a href="#">资质证照</a></li><li><a href="#">协议规则</a></li><li><a href="#">下载app</a></li><li><a href="#">Select Region</a></li>
+						</ul>
+					</div>
+					<div class="mibook-header-up-right">
+						<img class="shopcar" src="img/shopcar.png" />
+						<div class="mibook-header-up-right-span">
+							<span><a href="login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="zhuce.html">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">消息通知</a></span>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="mibook-header-nav">
+					<div class="mibook-header-nav-content">
+						<div class="mibook-header-nav-left">
+							<img src="img/loginlogo.png" />
+							<div class="mibook-header-nav-left-ul">
+							<ul>
+								<li><a href="#">全部商品分类</a></li><li><a href="#">小米手机</a></li><li><a href="#">红米</a></li><li><a href="#">电视</a></li><li><a href="#">笔记本</a></li><li><a href="#">家电</a></li><li><a href="#">新品</a></li><li><a href="#">路由器</a></li><li><a href="#">智能硬件</a></li><li><a href="#">服务</a></li><li><a href="#">社区</a></li>
+							</ul>
+							</div>
+						</div>
+						<div class="mibook-header-nav-right">
+							<img src="img/search.png" />
+							<input type="text" />
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="mibook-header-down">
+					<div class="mibook-header-down-content">
+						<div class="mibook-header-down-left">
+							<h2>小米笔记本Air 13.3″</h2>
+							<span>&nbsp;&nbsp;|&nbsp;<a href="#">小米笔记本Air 12.5″</a>&nbsp;|&nbsp;<a href="#">小米笔记本Pro 15.6″</a>&nbsp;|&nbsp;<a href="#">15.6寸游戏本 八代增强版</a></span>
+						</div>
+						<div class="mibook-header-down-right">
+							<input type="button" value="立即购买"/>
+							<div class="mibook-header-down-right-span">
+							<span><a href="#">概述</a>&nbsp;<span style="color: #e0e0e0;">|</span><a style="color: #FF6700;" href="#">参数</a>&nbsp;<span style="color: #E0E0E0;">|</span>&nbsp;<a href="#">F码通道</a>&nbsp;<span style="color: #E0E0E0;">|</span>&nbsp;<a href="#">用户评价</a>&nbsp;</span>
+						   </div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</header>
+			<section>
+				<div class="mibook-section1">
+					<div class="mibook-section-content">
+						<img class="specs_intro" src="img/specs_intro.jpg" />
+						<div class="mibook-section1-content-right">
+							<p class="span-p">
+								小米笔记本Air 13.3" 四核增强版<br />高性能轻薄笔记本<br />设计制图、运行大型 3D 游戏，复杂任务也可以轻松驾驭。<br />配置第八代酷睿四核 i7 处理器 / i5处理器
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section2">
+					<div class="mibook-section-content clearflo">
+						<div class="tianchong"></div>
+						<div class="mibook-section-content-row clearflo">
+						<div class="mibook-section-content-span1">
+							<h2>配置概览</h2>
+						</div>
+						<div class="mibook-section-content-span2">
+							<p class="span-p">
+								<strong>i7处理器／8GB／独显</strong><br />第八代英特尔®酷睿™ i7处理器<br />NVIDIA GeForce MX150独立显卡<br />2GB GDDR5显存<br />支持指纹识别<br />8GB DDR4<br />256GB PCIe SSD<br />支持硬盘扩容<br />深空灰 / 银色
+							</p>
+						</div>
+						<div class="mibook-section-content-span2">
+							<p class="span-p">
+								<strong>i5处理器／8GB／独显</strong><br />第八代英特尔®酷睿™ i5处理器<br />NVIDIA GeForce MX150独立显卡<br />2GB GDDR5显存<br />支持指纹识别<br />8GB DDR4<br />256GB PCIe SSD<br />支持硬盘扩容<br />深空灰 / 银色
+							</p>
+						</div>
+						<div class="mibook-section-content-span3">
+							<p class="span-p">
+								<strong>i5处理器／8GB／集显</strong><br />第八代英特尔®酷睿™ i5处理器<br />Intel UHD Graphics 620 集成显卡<br />支持指纹识别<br />8GB DDR4<br />256GB PCIe SSD<br />支持硬盘扩容<br />银色<br />
+							</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section3">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>处理器</h2>
+						    </div>
+						    <div class="mibook-section-content-span2">
+							    <p class="span-p">
+								    Intel Core i7-8550U<br />最高睿频 4.0GHz<br />四核八线程处理器<br />三级缓存 8MB
+							    </p>
+						    </div>
+						    <div class="mibook-section-content-span2">
+							    <p class="span-p">
+								    Intel Core i5-8250U<br />最高睿频 3.4GHz<br />四核八线程处理器<br />三级缓存 6MB
+							    </p>
+						    </div>
+						    <div class="mibook-section-content-span3">
+							    <p class="span-p">
+								    Intel Core i5-8250U<br />最高睿频 3.4GHz<br />四核八线程处理器<br />三级缓存 6MB
+							    </p>
+						    </div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section4">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+					<div class="mibook-section-content-row clearflo">
+						<div class="mibook-section-content-span1">
+							     <h2>显卡</h2>
+						</div>
+						<div class="mibook-section-content-span2">
+							    <p class="span-p">
+								    NVIDIA GeForce MX150 独立显卡<br />2GB GDDR5 显存
+							    </p>
+						</div>
+						<div class="mibook-section-content-span2">
+							    <p class="span-p">
+								    NVIDIA GeForce MX150 独立显卡<br />2GB GDDR5 显存
+							    </p>
+						</div>
+						<div class="mibook-section-content-span3">
+							    <p class="span-p">
+								    Intel UHD Graphics 620 集成显卡
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section5">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>视频输出</h2>
+						</div>
+						<div class="mibook-section-content-span2">
+							    <p class="span-p">
+								    支持三屏显示 和 双4K视频播放：<br />可外接两台 4K 分辨率显示屏笔记本全高清显示<br />三屏显示不同内容<br /><br />USB-C 和 HDMI 视频输出<br />全功能USB-C: 1080p 分辨率（最高 60Hz),4K 分辨率（最高 60Hz）<br />HDMI 1.4: 1080p 分辨率（最高 60Hz),4K 分辨率（最高 30Hz）<br /><br />支持数字音视频输出，外接电视、显示器<br /><br />支持有线或无线方式，需电视 / 显示器支持
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section6">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>硬盘</h2>
+						</div>
+						<div class="mibook-section-content-span2">
+							    <p class="span-p">
+							    	256GB PCIe × 4 NVMe SSD<br />预留SSD卡位，可扩展硬盘容量(M.2 SATA)<br />支持读写移动硬盘
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section7">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>内存</h2>
+						    </div>
+						<div class="mibook-section-content-span2">
+							    <p class="span-p">
+							    	8GB DDR4 2400MHz
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section8">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>网络</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	Intel 2X2 双天线双收 WiFi，支持 2.4GHz、5GHz 双频<br />支持 802.11ac 网络协议，兼容 802.11 b/g/n，最高网速达 867Mbps，蓝牙 4.1 无线技术
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section9">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>显示屏</h2>
+						    </div>
+						<div class="mibook-section9-right">
+						<img class="specs-screen" src="img/specs_screen.jpg" />
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	13.3" 屏幕，显示尺寸为 293.76mm x 165.24mm，超窄边框：5.59mm，超高屏占比：80.1%<br />FHD 全高清屏，分辨率 1920 x 1080 (166 ppi)，170°广视角，300nits 亮度，800:1 对比度，16:9 宽屏<br />广视角硬屏，康宁® 第三代大猩猩® 玻璃，全贴合技术
+							    </p>
+						</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section10">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>摄像头</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	100万像素摄像头，支持1280 x 720 视频通话，配备数字阵列麦克风
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section11">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>音频</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	声卡：Realtek ALC255，AKG 特别订制双扬声器，专业级喇叭单元，超大功率2Wx2<br/>特别调校的 Dolby Audio™ Premium 杜比音效-进阶版，支持电脑和耳机环绕声效果，高保真24kHz，48kHz 音频回放<br />支持具有线控功能和麦克风的耳机(苹果耳机除外)
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section12">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>电池电源</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	40瓦时(Typ) / 39瓦时(Min) 轻薄电池，两串两并 4cell 锂离子聚合物电芯，最高 578Wh/L 能量密度电池<br />支持 1C 快充，30分钟充电50%，USB-C电源适配端口<br />在线视频播放 8小时，本地视频播放 7.5小时，网页浏览 7.5小时
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section13">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>外设接口</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	全功能 USB-C 接口，5Gb/s 传输速度，支持充电、数据传输、视频输出<br />USB 3.0 端口 x 2，5Gb/s 传输速度，全尺寸 HDMI 接口 x 1，3.5mm 耳机麦克风插孔.
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section14">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>尺寸重量</h2>
+						    </div>
+						<div class="mibook-section14-right">
+						<img class="specs_body" src="img/specs_body.jpg" />
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	长：309.6mm，宽：210.9mm，薄：14.8mm，重：1.3kg<br />全金属机身，135度开合
+							    </p>
+						</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section15">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>键盘触控板</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	全尺寸背光键盘，1.3mm键程，3nits 亮度<br />玻璃触控板，可实现精准光标控制和多指手势控制功能，如整屏滚动、程序切换、画面缩放等手势<br />支持按压式指纹解锁
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section16">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>操作系统</h2>
+							     <h2>及预装软件</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	预装Windows 10 家庭版<br />正版Office家庭和学生版<br />支持小米同步
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section17">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>保修信息</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	整机保修1年，主要零部件2年*
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="hr"><hr/></div>
+				<div class="mibook-section18">
+					<div class="tianchong"></div>
+					<div class="mibook-section-content clearflo">
+						<div class="mibook-section-content-row clearflo">
+							<div class="mibook-section-content-span1">
+							     <h2>外包装规格</h2>
+						    </div>
+						<div class="mibook-section-content-span4">
+							    <p class="span-p">
+							    	笔记本电脑主机*1，电源适配器*1，USB-C充电线 *1，入门指南（三包凭证）*1
+							    </p>
+						</div>
+						</div>
+					</div>
+				</div>
+			<div class="mibook-section-wei">
+				<div class="tianchong2"></div>
+				<div class="mibook-section-wei-txt">
+					<div class="mibook-section-wei-txt-span">
+						<p class="mibook-section-wei-txt-span-p">注释：NVMe技术可带来随机读写效率、低功耗等多方面的性能提升，附上参考文章http://www.expreview.com/42142.html，超窄边框为左右显示区各自到玻璃盖板边框的距离。300nits为屏幕自身亮度。电池寿命因不同因素而异，包括产品型号、配置、加载的应用、功能、使用情况、无线功能及电源管理设置。使用一段时间后，电池的最大容量将有所下降。867Mbps是802.11AC 2x2 Wifi的最大理论速度，属于IEEE协议标准，可参考http://standards.ieee.org/findstds/standard/802.11ac-2013.html。电池在屏幕亮度200nits，不连接WiFi测试条件下，本地1080p视频播放最长可达7.5小时；在屏幕亮度200nits，WiFi连接测试条件下，在线高清视频播放最长可达8小时，使用系统内置默认浏览器进行网页浏览最长可达7.5小时。1C 快充技术 相比一般 0.7C 快充技术，充电效率快30%；关机或者休眠情况下使用自带电源充电，从0至50%电量需30分钟。主要零部件包括主板，屏幕，硬盘，键盘及电源适配器。本页中的内存容量、尺寸厚度重量、屏幕开合角度等数据均为理论值，实测中存在合理误差。</p>
+					</div>
+				</div>
+			</div>
+			</section>
+			<footer>
+			             <div class="foot-up" align="center">
+			             	<div class="foot-up-content clearflo">
+			             		<div class="foot-up-content-up clearflo">
+			             	<ul class="foot-up-ul">
+			             		<li><div class="foot-up-ul-box"><img src="img/footservice1.png"/><div class="foot-up-ul-txt"><span>一小时快修服务</span></div></div></li>
+			             		<li><div class="foot-up-ul-txt">|</div></li>
+			             		<li><div class="foot-up-ul-box"><img src="img/footerservice2.png" /><div class="foot-up-ul-txt"><span>七天无理由退货</span></div></div> </li>
+			             		<li><div class="foot-up-ul-txt">|</div></li>
+			             		<li><div class="foot-up-ul-box"><img src="img/footerservice3.png"/><div class="foot-up-ul-txt"><span>15天免费换货 </span></div></div></li>
+			             		<li><div class="foot-up-ul-txt">|</div></li>
+			             		<li><div class="foot-up-ul-box"><img src="img/footerservice4.png" /><div class="foot-up-ul-txt"><span>满150元包邮</span></div></div> </li>
+			             		<li><div class="foot-up-ul-txt">|</div>	</li>
+			             		<li><div class="foot-up-ul-box"><img src="img/footerservice5.png" /><div class="foot-up-ul-txt"><span>520余家售后网点</span></div></div> </li>
+			             	</ul>
+			             	   </div>
+			             	</div>
+			             	<div class="hr"><hr/></div>
+			             	<div class="foot-up-content clearflo">
+			             	<div class="foot-up-content-down clearflo">
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">帮助中心</li>
+			             		<li>账户管理</li>
+			             		<li>用户指南</li>
+			             		<li>购物操作</li>
+			             	</ul>
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">服务支持</li>
+			             		<li>售后政策</li>
+			             		<li>自助服务</li>
+			             		<li>相关下载</li>
+			             	</ul>
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">线下门店</li>
+			             		<li>小米之家</li>
+			             		<li>服务网点</li>
+			             		<li>授权体验店</li>
+			             	</ul>
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">关于小米</li>
+			             		<li>了解小米</li>
+			             		<li>加入小米</li>
+			             		<li>投资者关系</li>
+			             	</ul>
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">关注我们</li>
+			             		<li>新浪微博</li>
+			             		<li>官方微信</li>
+			             		<li>联系我们</li>
+			             	</ul>
+			             	<ul class="foot-up-ul2">
+			             		<li class="foot-up-ul2-b">特色服务</li>
+			             		<li>F码通道</li>
+			             		<li>礼物码</li>
+			             		<li>防伪查询</li>
+			             	</ul>
+			             	<div class="foot-up-right" align="center">
+			             		<span class="right-number">400-100-5678</span><br />
+			             		<span class="right-time">周一至周日 8:00-18:00</span><br />
+			             		<span class="right-time">(仅收市话费)</span><br /><br />
+			             		<img src="img/telephone.png" />
+			             	</div>
+			             	</div>
+			             	</div>
+			             </div>
+			             </div>
+			        <div class="foot-down">
+			        	<div class="foot-down-box">
+			        	<img class="foot-down-img" src="img/logo.png" />
+			        	<div class="foot-down-span">
+			        	<span class="foot-down-link">
+			        		小米商城|MIUI|米聊|游戏|多看书城|小米路由器|视频电话|小米后院|小米天猫店|小米淘宝直营店|小米网盟|问题反馈|Select Region
+			        	</span><br /><br />
+			        	<span class="foot-down-bei">
+			        		©mi.com京ICP证110507号 京ICP10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号
+			        	</span><br />
+			        	<span class="foot-down-bei">
+			        		违法和不良信息举报电话:185-0130-1238,本网站所列数据,除特殊说明,所有数据均出自我司实验室测试
+			        	</span>
+			        	</div>
+			        	<div class="foot-down-img-wei">
+			        	<img src="img/footerlogo1.png" />
+			        	<img src="img/footerlogo2.png" />
+			        	<img src="img/footerlogo3.png" />
+			        	<img src="img/footerlogo4.png" />
+			        	</div>
+			        	<div class="fashao-div" align="center">
+				        <img class="fashao" src="img/footerinfobottom.png" />
+				        </div>
+				        </div>
+			        </div>
+			       
+			</footer>
+		</div>
+	</body>
+</html>
